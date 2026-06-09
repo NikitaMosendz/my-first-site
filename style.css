@@ -2,6 +2,10 @@ body {
     background-color: #222;
     color: #fff;
     font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
 }
 
 button {
@@ -10,4 +14,8 @@ button {
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
+}
+button:hover {
+    background-color: #45a049;
+    cursor: pointer;
 }
