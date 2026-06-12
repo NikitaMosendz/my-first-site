@@ -1,6 +1,7 @@
 const button = document.getElementById('theme-btn');
 const body = document.body;
 const clickCounter = document.getElementById('click-counter');
+const userName = document.getElementById('user-name');
 
 let clicks = 0;
 
@@ -13,3 +14,12 @@ button.addEventListener('click', () => {
         button.textContent = 'Light theme'
     }
 })
+
+fetch('http://localhost:3000/profile')
+    .then(response => response.json())
+    .then(data => {
+        userName.textContent = `Hello, ${data.username}`
+
+        clicks = data.clicks
+        clickCounter.textContent = `Clicks: ${data.clicks}`
+    });
